@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('category_name', 30)->comment('Category name eg. News, Review, Podcast, Opinion, Lifestyle, etc.');
-            $table->string('slug')->comment('URL descriptor of category.');
-            $table->string('description')->comment('Category description.');
+            $table->string('tag_name')->comment('view tag name')->max(45);
+            $table->string('Slug')->comment('url');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('tags');
     }
 };

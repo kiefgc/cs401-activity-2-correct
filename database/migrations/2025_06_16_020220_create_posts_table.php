@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug')->comment('URL descriptor of the post.');
             $table->dateTime('publication_date')->comment('Date of publication.')->nullable();
             $table->dateTime('last_modified_date')->comment('Date where post was last modified.')->nullable();
-            $table->string('status')->comment('D - Draft, P - Published, I - Inactive.')->max(1);
+            $table->string('status', 1)->comment('D - Draft, P - Published, I - Inactive.');
             $table->text('featured_image_url')->comment('URL for the featured image of the post.');
             $table->integer('views_count')->comment('Total views of post.')->default(0);
         });
